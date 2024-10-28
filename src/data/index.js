@@ -2,6 +2,10 @@ import {
   wbp,
   ims,
   vwp,
+  llf,
+  aeye,
+  csai,
+  pp,
 } from "../assets";
 
 export const navLinks = [
@@ -48,11 +52,39 @@ const experiences = [
 
 const portfolio = [
   {
+    name: "Language Learning Flashcards",
+    description:
+      "A web application that leverages artificial intelligence to generate interactive language learning flashcards with translations and pronunciation guides. Built with Next.js and Firebase, the platform enhances vocabulary retention through personalized study sessions and includes features like progress tracking and competitive quizzes to make language learning more engaging.",
+    image: llf,
+    url: "https://ai-flashcards-sand.vercel.app/"
+  },
+  {
     name: "Virtual Webcam Painter",
     description:
       "Developed a Python application using OpenCV and MediaPipe to enable hand gesture-based painting via webcam, achieving 90% accuracy in gesture recognition for painting, color/tool selection, and erasing, and implemented a user-friendly interface with a visual toolbar for seamless interaction.",
     image: vwp,
     url: "https://www.youtube.com/watch?v=OqOSG__sOo4&feature=youtu.be"
+  },
+  {
+    name: "Ai Image Enhancer",
+    description:
+      "A powerful batch processing tool that leverages the ESRGAN (Enhanced Super-Resolution Generative Adversarial Network) model to upscale and improve image quality. The application streamlines the enhancement process by allowing users to upgrade multiple images simultaneously, transforming low-resolution or degraded images into sharper, more detailed versions while preserving natural features.",
+    image: aeye,
+    url: "https://youtu.be/8nFHdq2CaEw"
+  },
+  {
+    name: "ProfRateAI",
+    description:
+      "An intelligent professor recommendation system that uses advanced AI and Retrieval-Augmented Generation (RAG) to help students find their ideal instructors based on teaching style, course difficulty, and other preferences. Through its intuitive chat interface, the application analyzes a comprehensive database of student reviews to provide personalized professor recommendations, making course selection more informed and efficient.",
+    image: pp,
+    url: "https://youtu.be/5Yujsiy98rw"
+  },
+  {
+    name: "Customer Support AI",
+    description:
+      "Customer-Support-AI is an intelligent support system that uses RAG technology to provide accurate, contextual responses to customer queries in the food and beverage sector. Leveraging both Google Gemini and AWS Bedrock AI models, the application helps customer support teams deliver faster, more accurate responses while maintaining high-quality information for customers.",
+    image: csai,
+    url: "https://youtu.be/dkUAc5MTFPY"
   },
   {
     name: "Inventory Management System",

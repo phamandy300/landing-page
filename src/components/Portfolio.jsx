@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { portfolio } from "../data";
@@ -42,7 +42,7 @@ const ProjectCard = ({
             alt='project_image'
             className='w-full h-auto object-cover md:rounded-3xl'
           />
-          </a>
+        </a>
       </div>
 
       <div className={`w-full md:w-2/5 px-6 md:p-16 flex flex-col justify-center ${isEven ? "text-left md:text-left" : "text-left md:text-right"}`}>
@@ -54,6 +54,14 @@ const ProjectCard = ({
 };
 
 const Portfolio = () => {
+  const [visibleProjects, setVisibleProjects] = useState(3);
+  const [showMore, setShowMore] = useState(false);
+
+  const handleSeeMore = () => {
+    setShowMore(!showMore);
+    setVisibleProjects(showMore ? 3 : portfolio.length);
+  };
+
   return (
     <div className='text-center md:text-left md:px-20 lg:px-40'>
       <motion.div variants={textVariant()}>
@@ -61,10 +69,21 @@ const Portfolio = () => {
       </motion.div>
 
       <div className='mt-10 md:mt-20 flex flex-col gap-10 md:gap-20'>
-        {portfolio.map((project, index) => (
+        {portfolio.slice(0, visibleProjects).map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
+
+      {portfolio.length > 3 && (
+        <div className='mt-8 text-center'>
+          <button
+            onClick={handleSeeMore}
+            className='px-6 py-3 rounded-md transition-all duration-300 border-2 border-primary bg-primary text-white hover:bg-white hover:text-primary'
+          >
+            {showMore ? "Show Less" : "See More"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
